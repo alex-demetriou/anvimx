@@ -13,12 +13,11 @@ in
     enable = true;
     plugins = [
       comment
-      treesitter.lazyPlugin
+      treesitter
       conform.lazyPlugin
       gitsigns
     ];
   };
 
-  extraFiles = treesitter.files;
   inherit (conform) opts;
 }
