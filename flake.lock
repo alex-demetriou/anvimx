@@ -278,22 +278,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1713714899,
-        "narHash": "sha256-+z/XjO3QJs5rLE5UOf015gdVauVRQd2vZtsFkaXBq2Y=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "6143fc5eeb9c4f00163267708e26191d1e918932",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixvim": {
       "inputs": {
         "devshell": "devshell_2",
@@ -301,15 +285,17 @@
         "flake-parts": "flake-parts_2",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1713794074,
-        "narHash": "sha256-v1Bf4bMriI3ZIui8XwA9kkyspn+zPDOa/C5VN022Bk0=",
+        "lastModified": 1713856119,
+        "narHash": "sha256-TfNc8vxF7IaRhTlMgOeUN01y7QoBx50MYmGU1sSU6Vw=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "6f7b236f65d1751788c4ab50b78fdae7dd20ef49",
+        "rev": "c826d146c65bfa8164f31931cf54278b99f5a3a0",
         "type": "github"
       },
       "original": {

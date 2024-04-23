@@ -1,9 +1,9 @@
-{ pkgs }:
 let
   ts-root = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
     # programming
     p.bash
     p.c_sharp
+    p.c
     p.javascript
     p.lua
     p.luap
@@ -68,22 +68,24 @@ let
 in
 {
   pkg = pkgs.vimPlugins.nvim-treesitter;
+  dependencies = [ pkgs.vimPlugins.nvim-treesitter-textobjects ];
   lazy = false;
-  config = ''
-    function ()
-      vim.opt.runtimepath:append("${ts-root}")
-      vim.opt.runtimepath:append("${ts-parsers}")
+  config = # lua
+    ''
+      function ()
+        vim.opt.runtimepath:append("${ts-root}")
+        vim.opt.runtimepath:prepend("${ts-parsers}")
 
-      local configs = require("nvim-treesitter.configs")
+        local configs = require("nvim-treesitter.configs")
 
-      configs.setup({
-        parser_install_dir = "${ts-parsers}",
-        ensure_installed = {},
-        auto_install = false,
-        highlight = { enable = true },
-        indent = { enable = true },
-        incremental_selection = { enable = true },
-      })
-    end
-  '';
+        configs.setup({
+          parser_install_dir = "${ts-parsers}",
+          ensure_installed = {},
+          auto_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },
+          incremental_selection = { enable = true },
+        })
+      end
+    '';
 }

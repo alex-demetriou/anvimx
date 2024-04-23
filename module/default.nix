@@ -9,6 +9,8 @@
   ];
 
   config.extraPackages = [
+    pkgs.tree-sitter
+    pkgs.nodejs
     pkgs.nixd
     pkgs.stylua
     pkgs.nixfmt-rfc-style
