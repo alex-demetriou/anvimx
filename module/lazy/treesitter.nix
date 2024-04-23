@@ -1,4 +1,5 @@
-{ pkgs }: let
+{ pkgs }:
+let
   ts-root = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
     # programming
     p.bash
