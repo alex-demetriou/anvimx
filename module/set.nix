@@ -5,7 +5,7 @@
       maplocalleader = " ";
     };
 
-    options = {
+    opts = {
       number = true;
       relativenumber = true;
       mouse = "a";
