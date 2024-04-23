@@ -32,6 +32,12 @@
 
           devshells.default = {
             packages = [ anvim ];
+            env = [
+              {
+                name = "DEVSHELL_NO_MOTD";
+                value = 1;
+              }
+            ];
           };
         };
     };
