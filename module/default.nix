@@ -7,7 +7,7 @@
     ./appearance.nix
     ./lazy
   ];
-  config.enableMan = false; # TODO: re-enable when weird aarch64-linux requirement is fixed
+
   config.extraPackages = [
     pkgs.nixd
     pkgs.stylua
@@ -15,4 +15,6 @@
     pkgs.lua-language-server
     pkgs.omnisharp-roslyn
   ];
+
+  config.enableMan = false; # TODO: re-enable when broken aarch64-linux dependency is fixed
 }
