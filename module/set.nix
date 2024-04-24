@@ -17,7 +17,7 @@
       smartcase = true;
       signcolumn = "yes";
       updatetime = 100;
-      timeoutlen = 100;
+      timeoutlen = 150;
       splitright = true;
       splitbelow = true;
       list = true;
