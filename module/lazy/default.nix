@@ -7,7 +7,6 @@ let
   lspconfig = import ./lspconfig.nix { inherit pkgs; };
   telescope = import ./telescope.nix { inherit pkgs; };
   cmp = import ./cmp.nix { inherit pkgs; };
-  which-key = import ./which-key.nix { inherit pkgs; };
 in
 {
   plugins.lazy = {
