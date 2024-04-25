@@ -8,7 +8,6 @@ let
   guess-indent = import ./guess-indent.nix { inherit pkgs; };
   lspconfig = import ./lspconfig.nix { inherit pkgs; };
   neodev = import ./neodev.nix { inherit pkgs; };
-  telescope = import ./telescope.nix { inherit pkgs; };
   treesitter = import ./treesitter.nix { inherit pkgs; };
 in
 {
