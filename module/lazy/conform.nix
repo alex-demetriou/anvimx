@@ -18,15 +18,15 @@
     keys = {
       __raw = # lua
         ''
-          {
+          {{
           	"<leader>f",
           	function()
           		require("conform").format({
           			async = true,
           			lsp_fallback = true,
           		})
-          	end,
-          }
+          	end
+          }}
         '';
     };
     dependencies = [ pkgs.codespell ];
