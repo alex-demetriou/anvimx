@@ -14,6 +14,8 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ inputs.devshell.flakeModule ];
 
+      debug = true;
+
       systems = [
         "x86_64-linux"
         "aarch64-darwin"
@@ -22,23 +24,17 @@
       perSystem =
         { pkgs, system, ... }:
         let
-          anvim = inputs.nixvim.legacyPackages.${system}.makeNixvimWithModule {
+          anvimx = inputs.nixvim.legacyPackages.${system}.makeNixvimWithModule {
             inherit pkgs;
             module = import ./module;
           };
         in
         {
           formatter = pkgs.nixfmt-rfc-style;
-          packages.default = anvim;
+          packages.default = anvimx;
 
           devshells.default = {
-            packages = [ anvim ];
-            env = [
-              {
-                name = "DEVSHELL_NO_MOTD";
-                value = 1;
-              }
-            ];
+            packages = [ anvimx ];
           };
         };
     };
