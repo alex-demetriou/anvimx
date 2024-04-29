@@ -12,15 +12,26 @@
     pkgs.vimPlugins.cmp-cmdline
     pkgs.vimPlugins.cmp-nvim-lua
     pkgs.vimPlugins.lspkind-nvim
+    pkgs.vimPlugins.luasnip
+    pkgs.vimPlugins.cmp_luasnip
   ];
   config = # lua
     ''
       function()
         local cmp = require('cmp')
+        local luasnip = require('luasnip')
+        require("luasnip/loaders/from_vscode").lazy_load()
+
         cmp.setup({
+          snippet = {
+            expand = function(args)
+              luasnip.lsp_expand(args.body) -- For `luasnip` users.
+            end,
+          },
           sources = cmp.config.sources({
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
+            { name = "luasnip" },
           }, {
             { name = "buffer" },
             { name = "path" },
