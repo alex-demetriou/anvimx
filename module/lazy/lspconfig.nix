@@ -15,7 +15,21 @@
         local lsp = require('lspconfig')
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-        lsp.nixd.setup({ capabilities = capabilities })
+        lsp.nixd.setup({
+          capabilities = capabilities,
+          settings = {
+            nixd = {
+              nixpkgs = {
+                expr = "import (builtins.getFlake \"/home/nixos/repo/anix\").inputs.nixpkgs { }"
+              },
+              options = {
+                anvimx = {
+                  expr = "(builtins.getFlake \"/home/nixos/repo/anvimx\").debug.options"
+                },
+              },
+            },
+          },
+        })
         lsp.lua_ls.setup({ capabilities = capabilities })
 
         vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
