@@ -7,6 +7,7 @@ let
   gitsigns = import ./gitsigns.nix { inherit pkgs; };
   guess-indent = import ./guess-indent.nix { inherit pkgs; };
   lspconfig = import ./lspconfig.nix { inherit pkgs; };
+  typescript-tools = import ./typescript-tools.nix { inherit pkgs; };
   neodev = import ./neodev.nix { inherit pkgs; };
   treesitter = import ./treesitter.nix { inherit pkgs; };
 in
@@ -21,6 +22,7 @@ in
       gitsigns
       guess-indent
       lspconfig
+      typescript-tools
       neodev
       treesitter
     ];
