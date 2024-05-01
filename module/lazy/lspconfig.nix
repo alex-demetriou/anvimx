@@ -6,7 +6,6 @@
     "BufNewFile"
   ];
   dependencies = [
-    pkgs.vimPlugins.omnisharp-extended-lsp-nvim
     pkgs.vimPlugins.cmp-nvim-lsp
   ];
   config = # lua
