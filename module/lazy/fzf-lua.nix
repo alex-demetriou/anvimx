@@ -2,10 +2,6 @@
 {
   pkg = pkgs.vimPlugins.fzf-lua;
   dependencies = [
-    pkgs.fzf
-    pkgs.fd
-    pkgs.ripgrep
-    pkgs.delta
     pkgs.vimPlugins.nvim-dap
     pkgs.vimPlugins.nvim-web-devicons
   ];
@@ -16,6 +12,7 @@
         local fzf_lua = require("fzf-lua")
         fzf_lua.setup({
             winopts = {
+              blend = 50;
               preview = {
                 flip_columns = 200;
                 delay = 0;
@@ -33,6 +30,7 @@
         vim.keymap.set('n', '<leader>so', fzf_lua.resume, { desc = '[S]earch [R]esume' })
         vim.keymap.set('n', '<leader>s.', fzf_lua.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
         vim.keymap.set('n', '<leader><leader>', fzf_lua.buffers, { desc = '[ ] Find existing buffers' })
+        vim.keymap.set('n', '<leader>gb', fzf_lua.git_branches, { desc = 'Search [G]it [B]ranches' })
         vim.keymap.set('n', '<leader>gf', fzf_lua.git_files, { desc = 'Search [G]it [F]iles' })
         vim.keymap.set('n', '<leader>gs', fzf_lua.git_status, { desc = 'Show [G]it [S]tatus' })
       end
