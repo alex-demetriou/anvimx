@@ -9,14 +9,15 @@
   ];
 
   config.extraPackages = [
-    pkgs.tree-sitter
-    pkgs.nodejs
-    pkgs.nixd
-    pkgs.stylua
-    pkgs.nixfmt-rfc-style
-    pkgs.lua-language-server
-    pkgs.omnisharp-roslyn
     pkgs.fzf
+    pkgs.gopls
+    pkgs.lua-language-server
+    pkgs.nixd
+    pkgs.nixfmt-rfc-style
+    pkgs.nodejs
+    pkgs.omnisharp-roslyn
+    pkgs.stylua
+    pkgs.tree-sitter
   ];
 
   config.enableMan = false; # TODO: re-enable when broken aarch64-linux dependency is fixed

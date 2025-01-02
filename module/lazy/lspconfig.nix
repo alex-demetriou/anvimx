@@ -31,6 +31,7 @@
           },
         })
         lsp.lua_ls.setup({ capabilities = capabilities })
+        lsp.gopls.setup({ capabilities = capabilities })
 
         vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
         vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
